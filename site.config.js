@@ -6,9 +6,9 @@ const CONFIG = {
     role: "back-end developer",
     bio: "I develop everything using Spring.",
     email: "cha3088@gmail.com",
-    linkedin: "Cha Cha",
+    linkedin: "cha-cha-058254208",
     github: "ChaCha3088",
-    instagram: "@cha_cha_3088",
+    instagram: "cha_cha_3088",
   },
   projects: [
     {
@@ -36,13 +36,13 @@ const CONFIG = {
 
   // plugin configuration (optional)
   googleAnalytics: {
-    enable: false,
+    enable: true,
     config: {
       measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
     },
   },
   googleSearchConsole: {
-    enable: false,
+    enable: true,
     config: {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     },
