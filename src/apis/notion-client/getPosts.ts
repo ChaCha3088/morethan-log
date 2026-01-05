@@ -15,7 +15,19 @@ export const getPosts = async () => {
   let id = CONFIG.notionConfig.pageId as string
   const api = new NotionAPI()
 
-  const response = await api.getPage(id)
+  const response = await api.getPage(id, {
+    gotOptions: {
+      hooks: {
+        beforeRequest: [
+          (options: { url: { pathname: string } }) => {
+            if (options.url.pathname === "/api/v3/syncRecordValues") {
+              options.url.pathname = "/api/v3/syncRecordValuesMain";
+            }
+          },
+        ],
+      },
+    },
+  });
   id = idToUuid(id)
   const collection = Object.values(response.collection)[0]?.value
   const block = response.block
